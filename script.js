@@ -19,6 +19,18 @@ function updatePosition(position) {
 
     dot.style.left = x + "px";
     dot.style.top = y + "px";
+
+    // Check if outside campus
+    if (
+        lat < bottomLat ||
+        lat > topLat ||
+        lon < leftLon ||
+        lon > rightLon
+    ) {
+        console.log("User outside campus bounds");
+    } else {
+        console.log("User inside campus");
+    }
 }
 
 function error(err) {
